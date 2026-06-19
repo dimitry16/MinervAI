@@ -28,7 +28,7 @@ def generate_summary(userInput):
     ]
 
     # The model to use for generation
-    model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system_instruction)
+    model = genai.GenerativeModel("gemini-3.5-flash", system_instruction=system_instruction)
 
     # The prompt for the model
     prompt = "Generate a summary of this module with key points, then generate an 'Explain it like I'm 5' summary as well at the bottom. Return your response as HTML code. Only return the summary, nothing else.\n" + userInput
@@ -55,7 +55,7 @@ def generate_flashcards(userInput):
     ]
 
     # The model to use for generation
-    model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system_instruction)
+    model = genai.GenerativeModel("gemini-3.5-flash", system_instruction=system_instruction)
 
     # The prompt for the model
     prompt = ("Your goal is to create flashcards. Flashcards will be represented by a dictionary formatted like {key:value} with the keys being questions based on the input, and the values being their answer. Your output should consist of nothing else except this dictionary. Do not include any other text besides the dictionary.\nInput:\n" + userInput)
@@ -82,7 +82,7 @@ def generate_quiz(userInput):
     ]
 
     # The model to use for generation
-    model = genai.GenerativeModel("gemini-2.0-flash", system_instruction=system_instruction)
+    model = genai.GenerativeModel("gemini-3.5-flash", system_instruction=system_instruction)
 
     # The prompt for the model
     prompt = ("Generate potential quiz questions using the information from the input. Return your response as a list of tuples. Each tuple will have a dictionary of one of the questions and list of potential answers in this format: {'*question goes here*':[possible answers],...}. The second element in the tuple should be the index of the correct answer in the list of potential answers. Only return the list of tuples, no other text.\n input:\n" + userInput)
