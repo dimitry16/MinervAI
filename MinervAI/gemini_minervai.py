@@ -31,7 +31,7 @@ def generate_summary(userInput):
     model = genai.GenerativeModel("gemini-3.5-flash", system_instruction=system_instruction)
 
     # The prompt for the model
-    prompt = "Generate a summary of this module with key points, then generate an 'Explain it like I'm 5' summary as well at the bottom. Return your response as HTML code. Only return the summary, nothing else.\n" + userInput
+    prompt = "Generate a summary of this module with key points, then generate an 'Explain it like I'm 5' summary as well at the bottom. Return your response as HTML code only. Do not apply any styles to the response HTML. Only return the summary, nothing else.\n" + userInput
 
     # Generate content from the model
     response = model.generate_content(prompt)
